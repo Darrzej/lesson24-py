@@ -35,3 +35,13 @@ SET salary = ?
 WHERE name = ?
 ''',('75000.00', 'John'))
 connection.commit()
+
+cursor.execute('''
+DELETE FROM employees
+WHERE name = ?
+               ''', ('John',))
+connection.commit()
+
+cursor.close()
+connection.close()
+
